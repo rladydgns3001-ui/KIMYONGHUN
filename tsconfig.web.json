@@ -4,7 +4,7 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "target": "ESNext",
-    "lib": ["ESNext"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "outDir": "./out",
     "rootDir": ".",
     "strict": true,
@@ -12,17 +12,14 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "declarationMap": true,
     "paths": {
+      "@/*": ["./src/renderer/src/*"],
       "@shared/*": ["./src/shared/*"]
     }
   },
-  "include": [
-    "src/main/**/*",
-    "src/preload/**/*",
-    "src/shared/**/*",
-    "electron.vite.config.ts"
-  ]
+  "include": ["src/renderer/**/*", "src/shared/**/*"]
 }
