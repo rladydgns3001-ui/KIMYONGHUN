@@ -54,8 +54,9 @@ export const useAppStore = create<AppState>((set, get) => ({
       const settings = await window.api.getSettings()
       set({ settings, theme: settings.theme })
       applyTheme(settings.theme)
-    } catch {
-      // Settings will be loaded later
+    } catch (e) {
+      console.error('Failed to load settings:', e)
+      applyTheme('light')
     }
   }
 }))

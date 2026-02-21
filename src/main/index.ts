@@ -38,7 +38,11 @@ function createWindow(): void {
 }
 
 app.whenReady().then(() => {
-  initDatabase()
+  try {
+    initDatabase()
+  } catch (e) {
+    console.error('Database init failed:', e)
+  }
   registerIpcHandlers()
   createWindow()
 
